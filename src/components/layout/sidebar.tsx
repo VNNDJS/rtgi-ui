@@ -1,6 +1,54 @@
 import { useLayoutStore } from "@/store"
-import { Menu } from "lucide-react"
+import {
+  Calendar,
+  CircleUserRound,
+  Menu,
+  MessageSquare,
+  SquareKanban,
+  Trees,
+} from "lucide-react"
 import { motion } from "framer-motion"
+import { SidebarItem as TSidebarItem } from "@/types"
+import { USER_TYPE } from "@/constant"
+import { SidebarItem } from "./sidebar-item"
+
+const sidebarItems: TSidebarItem[] = [
+  {
+    id: "dashboard",
+    path: "/dashboard",
+    icon: <SquareKanban size={20} />,
+    label: "Dashboard",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+  {
+    id: "green-space",
+    path: "/green-spaces",
+    icon: <Trees size={20} />,
+    label: "Green Space",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+  {
+    id: "event",
+    path: "/events",
+    icon: <Calendar size={20} />,
+    label: "Event",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+  {
+    id: "profile",
+    path: "/profile",
+    icon: <CircleUserRound size={20} />,
+    label: "Profile",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+  {
+    id: "chat",
+    path: "/chat",
+    icon: <MessageSquare size={20} />,
+    label: "Chat",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+]
 
 export const Sidebar = () => {
   const { isSidebarOpen, toggleSidebar } = useLayoutStore()
@@ -31,6 +79,18 @@ export const Sidebar = () => {
           <Menu size={20} onClick={toggleSidebar} />
         </span>
       </div>
+      <ul className="flex flex-col gap-5">
+        {sidebarItems?.map((sidebarItem, index) => (
+          <SidebarItem
+            label={sidebarItem.label}
+            key={`${sidebarItem.id}-${index}`}
+            isSidebarOpen={isSidebarOpen}
+            path={sidebarItem.path}
+            icon={sidebarItem.icon}
+            visibleBy={sidebarItem.visibleBy}
+          />
+        ))}
+      </ul>
     </motion.aside>
   )
 }
