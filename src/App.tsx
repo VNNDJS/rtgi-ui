@@ -1,5 +1,13 @@
+import { SnackbarProvider } from "notistack"
+import { AppRoutes } from "./routes"
+
 function App() {
-  return <h1>Hello World</h1>
+  return (
+    <>
+      <AppRoutes />
+      <SnackbarProvider />
+    </>
+  )
 }
 
 export default App
