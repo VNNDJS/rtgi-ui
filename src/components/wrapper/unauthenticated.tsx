@@ -15,7 +15,7 @@ export const Unauthenticated = () => {
   }
 
   return (
-    <main className="min-h-screen w-full">
+    <main className="w-full min-h-screen flex justify-center items-center">
       <Outlet />
     </main>
   )

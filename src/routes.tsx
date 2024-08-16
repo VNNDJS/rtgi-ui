@@ -9,7 +9,7 @@ export const AppRoutes = () => {
        * Route for authenticated user
        */}
       <Route path="/" element={<Authenticated />}>
-        <Route path="/dashboard" Component={Dashboard} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
 
       {/**
