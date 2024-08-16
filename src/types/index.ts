@@ -1,1 +1,1 @@
-export type { ApiError } from "./exception"
+export type { ApiError } from "./api-error"

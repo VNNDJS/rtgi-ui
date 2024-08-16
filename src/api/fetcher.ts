@@ -1,5 +1,5 @@
 import { getCached, notify } from "@/lib"
-import { ApiError } from "@/types/exception"
+import { ApiError } from "@/types"
 import axios, { Method, AxiosRequestConfig } from "axios"
 
 type ParamsValue = string | number | boolean
