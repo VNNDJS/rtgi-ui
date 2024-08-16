@@ -1,3 +1,6 @@
-export { Login } from "./login"
-export { SignUp } from "./sign-up"
+export { Login } from "./auth/login"
+export { SignUp } from "./auth/sign-up"
 export { Dashboard } from "./dashboard"
+export * from "./auth"
+export * from "./green-spaces"
+export { Profile } from "./profile"

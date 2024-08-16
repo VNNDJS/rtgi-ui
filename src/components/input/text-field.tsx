@@ -32,7 +32,7 @@ export const TextField: FC<TextFieldProps> = ({
         placeholder={placeholder}
         onChange={onChange}
         className={cn(
-          "ring-0 focus-within:outline-none focus:outline-none",
+          "h-[30px] ring-0 focus-within:outline-none focus:outline-none",
           inputCls,
         )}
       />

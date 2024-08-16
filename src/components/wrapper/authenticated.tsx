@@ -3,9 +3,9 @@ import { Navigate, Outlet } from "react-router-dom"
 
 export const Authenticated = () => {
   const id = getCached("id")
-  const role = getCached("role")
+  const type = getCached("type")
 
-  if (!id || !role) {
+  if (!id || !type) {
     return <Navigate to="/login" replace={true} />
   }
 

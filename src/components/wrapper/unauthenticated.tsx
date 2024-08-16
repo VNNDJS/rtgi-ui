@@ -1,16 +1,16 @@
-import { USER_ROLE } from "@/constant"
+import { USER_TYPE } from "@/constant"
 import { getCached } from "@/lib"
 import { Navigate, Outlet } from "react-router-dom"
 
 export const Unauthenticated = () => {
   const id = getCached("id")
-  const role = getCached("role")
+  const type = getCached("type")
 
-  if (id && role === USER_ROLE.GREEN_REPRESENTATIVE) {
+  if (id && type === USER_TYPE.GREEN_REPRESENTATIVE) {
     return <Navigate to="/profile" replace={true} />
   }
 
-  if (id && role === USER_ROLE.COMMON) {
+  if (id && type === USER_TYPE.COMMON) {
     return <Navigate to="/green-spaces" replace={true} />
   }
 

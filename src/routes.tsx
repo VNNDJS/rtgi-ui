@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Authenticated, Unauthenticated } from "./components"
-import { Dashboard, Login, SignUp } from "./pages"
+import { Dashboard, GreenSpaceList, Login, Profile, SignUp } from "./pages"
 
 export const AppRoutes = () => {
   return (
@@ -10,6 +10,10 @@ export const AppRoutes = () => {
        */}
       <Route path="/" element={<Authenticated />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/green-spaces">
+          <Route index Component={GreenSpaceList} />
+        </Route>
+        <Route path="/profile" Component={Profile} />
       </Route>
 
       {/**
