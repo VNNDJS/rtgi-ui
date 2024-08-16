@@ -1,5 +1,6 @@
 import { getCached } from "@/lib"
 import { Navigate, Outlet } from "react-router-dom"
+import { Sidebar } from "../layout"
 
 export const Authenticated = () => {
   const id = getCached("id")
@@ -10,7 +11,8 @@ export const Authenticated = () => {
   }
 
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full flex flex-row gap-5">
+      <Sidebar />
       <Outlet />
     </main>
   )
