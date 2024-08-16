@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 import { SidebarItem as TSidebarItem } from "@/types"
 import { USER_TYPE } from "@/constant"
 import { SidebarItem } from "./sidebar-item"
+import { LogoutButton } from "../auth"
 
 const sidebarItems: TSidebarItem[] = [
   {
@@ -35,17 +36,17 @@ const sidebarItems: TSidebarItem[] = [
     visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
   },
   {
-    id: "profile",
-    path: "/profile",
-    icon: <CircleUserRound size={20} />,
-    label: "Profile",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
-  },
-  {
     id: "chat",
     path: "/chat",
     icon: <MessageSquare size={20} />,
     label: "Chat",
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+  },
+  {
+    id: "profile",
+    path: "/profile",
+    icon: <CircleUserRound size={20} />,
+    label: "Profile",
     visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
   },
 ]
@@ -71,26 +72,27 @@ export const Sidebar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="font-rubik text-md"
+              className="quicksand-regular text-md"
             >
               RTGI
             </motion.h2>
           )}
           <Menu size={20} onClick={toggleSidebar} />
         </span>
+        <ul className="flex flex-col gap-5">
+          {sidebarItems?.map((sidebarItem, index) => (
+            <SidebarItem
+              label={sidebarItem.label}
+              key={`${sidebarItem.id}-${index}`}
+              isSidebarOpen={isSidebarOpen}
+              path={sidebarItem.path}
+              icon={sidebarItem.icon}
+              visibleBy={sidebarItem.visibleBy}
+            />
+          ))}
+        </ul>
       </div>
-      <ul className="flex flex-col gap-5">
-        {sidebarItems?.map((sidebarItem, index) => (
-          <SidebarItem
-            label={sidebarItem.label}
-            key={`${sidebarItem.id}-${index}`}
-            isSidebarOpen={isSidebarOpen}
-            path={sidebarItem.path}
-            icon={sidebarItem.icon}
-            visibleBy={sidebarItem.visibleBy}
-          />
-        ))}
-      </ul>
+      <LogoutButton isSidebarOpen={isSidebarOpen} />
     </motion.aside>
   )
 }

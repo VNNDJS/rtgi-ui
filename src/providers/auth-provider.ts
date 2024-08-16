@@ -1,6 +1,6 @@
 import { base, fetcher } from "@/api"
 import { getUserType } from "@/constant"
-import { cache, notify } from "@/lib"
+import { cache, clearCache, notify } from "@/lib"
 import { ApiError, AuthResponse } from "@/types"
 import {
   BearerToken,
@@ -75,5 +75,8 @@ export const authProvider = {
         authenticated: false,
       } satisfies AuthResponse
     }
+  },
+  logout: () => {
+    clearCache()
   },
 }

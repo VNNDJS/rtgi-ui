@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,24 +12,53 @@
     font-style: normal;
 }
   
+.quicksand-light {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
 .merriweather-regular {
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
 }
   
+.quicksand-regular {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 .merriweather-bold {
     font-family: "Merriweather", serif;
     font-weight: 700;
     font-style: normal;
 }
-  
+
+.quicksand-bold {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
 .merriweather-black {
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: normal;
 }
   
+
+.quicksand-black {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+
 .merriweather-light-italic {
     font-family: "Merriweather", serif;
     font-weight: 300;
