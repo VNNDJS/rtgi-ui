@@ -5,14 +5,20 @@ import App from "./App.tsx"
 import { NextUIProvider } from "@nextui-org/react"
 import { BrowserRouter } from "react-router-dom"
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
 import "./index.css"
+
+const queryClient = new QueryClient()
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <NextUIProvider>
-        <App />
-      </NextUIProvider>
+      <QueryClientProvider client={queryClient}>
+        <NextUIProvider>
+          <App />
+        </NextUIProvider>
+      </QueryClientProvider>
     </BrowserRouter>
   </StrictMode>,
 )

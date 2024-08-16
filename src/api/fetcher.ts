@@ -2,7 +2,7 @@ import { getCached, notify } from "@/lib"
 import { ApiError } from "@/types"
 import axios, { Method, AxiosRequestConfig } from "axios"
 
-type ParamsValue = string | number | boolean
+type ParamsValue = string | number | boolean | undefined
 
 export const fetcher = async <T>(
   url: string,

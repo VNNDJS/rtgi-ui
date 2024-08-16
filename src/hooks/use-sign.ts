@@ -23,7 +23,7 @@ export const useSign = (type: SignType, payload: Payload) => {
       setStatus("idle")
     } else {
       setStatus("idle")
-      navigate(auth.type === "COMMON" ? "/green-spaces" : "/profile")
+      navigate(auth.type === "COMMON" ? "/green-space" : "/profile")
     }
   }
   return { onSubmit, status }

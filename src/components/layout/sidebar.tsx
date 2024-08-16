@@ -23,14 +23,14 @@ const sidebarItems: TSidebarItem[] = [
   },
   {
     id: "green-space",
-    path: "/green-spaces",
+    path: "/green-space",
     icon: <Trees size={20} />,
     label: "Green Space",
     visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
   },
   {
     id: "event",
-    path: "/events",
+    path: "/event",
     icon: <Calendar size={20} />,
     label: "Event",
     visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
