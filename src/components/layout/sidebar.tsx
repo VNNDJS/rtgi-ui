@@ -4,7 +4,6 @@ import {
   CircleUserRound,
   Menu,
   MessageSquare,
-  SquareKanban,
   Trees,
 } from "lucide-react"
 import { motion } from "framer-motion"
@@ -15,39 +14,32 @@ import { LogoutButton } from "../auth"
 
 const sidebarItems: TSidebarItem[] = [
   {
-    id: "dashboard",
-    path: "/dashboard",
-    icon: <SquareKanban size={20} />,
-    label: "Dashboard",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
-  },
-  {
     id: "green-space",
     path: "/green-space",
     icon: <Trees size={20} />,
     label: "Green Space",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE, USER_TYPE.COMMON],
   },
   {
     id: "event",
     path: "/event",
     icon: <Calendar size={20} />,
     label: "Event",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE, USER_TYPE.COMMON],
   },
   {
     id: "chat",
     path: "/chat",
     icon: <MessageSquare size={20} />,
     label: "Chat",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE, USER_TYPE.COMMON],
   },
   {
     id: "profile",
     path: "/profile",
     icon: <CircleUserRound size={20} />,
     label: "Profile",
-    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE],
+    visibleBy: [USER_TYPE.GREEN_REPRESENTATIVE, USER_TYPE.COMMON],
   },
 ]
 

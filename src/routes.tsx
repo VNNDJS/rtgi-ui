@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Authenticated, Unauthenticated } from "./components"
 import {
-  Dashboard,
   GreenSpaceAdd,
   GreenSpaceEdit,
   GreenSpaceList,
@@ -22,7 +21,6 @@ export const AppRoutes = () => {
        * Route for authenticated user
        */}
       <Route path="/" element={<Authenticated />}>
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/green-space">
           <Route index Component={GreenSpaceList} />
           <Route path="/green-space/:id/read" Component={GreenSpaceRead} />
