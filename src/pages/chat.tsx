@@ -1,32 +1,41 @@
-import axios from "axios"
 import { ChangeEvent, useState } from "react"
+import { GoogleGenerativeAI } from "@google/generative-ai"
+
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
 
 export const Chat = () => {
   const [input, setInput] = useState("")
-  const [response, setResponse] = useState("")
 
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${import.meta.env.VITE_OPEN_API_KEY}`,
-  }
-  const requestBody = {
-    messages: [{ role: "user", content: input }],
-    model: "gpt-4",
-  }
+  const [promptResponses, setpromptResponses] = useState([])
 
-  const API_URL = import.meta.env.VITE_OPEN_API_URL
-
-  const sendMessage = async (e: ChangeEvent<HTMLFormElement>) => {
+  const getResponseForGivenPrompt = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const { data } = await axios.post(API_URL, requestBody, { headers })
-    setResponse(data.choices[0].message.content)
+    try {
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" })
+      const result = await model.generateContent(input)
+      const response = await result.response
+      const text = await response.text()
+      setpromptResponses([...promptResponses, text])
+      setInput("")
+    } catch (error) {
+      console.log("Something Went Wrong")
+    }
   }
 
   return (
     <section className="min-h-screen w-full p-2">
       <h2 className="py-2 text-xl quicksand-bold ">Chat</h2>
-      <form onSubmit={sendMessage} className="w-full h-[525px] flex flex-col">
-        <ul className="grow">{response}</ul>
+      <form
+        onSubmit={getResponseForGivenPrompt}
+        className="w-full h-[525px] flex flex-col"
+      >
+        <span className="grow">
+          {promptResponses.map((promptResponse, index) => (
+            <div key={index}>
+              <div>{promptResponse}</div>
+            </div>
+          ))}
+        </span>
         <input
           className="py-2 shadow-sm shadow-slate-400 rounded-lg px-5 outline-none"
           placeholder="Ask something..."
