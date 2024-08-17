@@ -11,11 +11,9 @@ export const greenSpaceProvider = {
   getOne: async (id: string) => {
     try {
       return await fetcher<GreenSpace>(
-        `${base.RTGI_API_URL}/green-spaces`,
+        `${base.RTGI_API_URL}/green-spaces/${id}`,
         "GET",
-        {
-          user_id: id,
-        },
+        undefined,
         undefined,
         undefined,
         true,

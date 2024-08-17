@@ -29,24 +29,28 @@ export const GreenSpaceAdd = () => {
           inputCls="max-w-xs"
           label="Name"
           value={greenSpace.profile?.location?.name}
+          id="profile.location.name"
           onChange={handleChange}
         />
         <TextField
           type="number"
           inputCls="max-w-xs"
           label="Area"
+          id="area"
           value={greenSpace.profile?.area}
           onChange={handleChange}
         />
         <TextField
           inputCls="max-w-xs"
           label="Description"
+          id="description"
           value={greenSpace.profile?.description}
           onChange={handleChange}
         />
         <TextField
           inputCls="max-w-xs"
           label="Address"
+          id="address"
           value={greenSpace.profile?.location?.address}
           onChange={handleChange}
         />
@@ -54,6 +58,7 @@ export const GreenSpaceAdd = () => {
           type="number"
           inputCls="max-w-xs"
           label="Longitude"
+          id="longitude"
           value={greenSpace.profile?.location?.longitude}
           onChange={handleChange}
         />
@@ -61,6 +66,7 @@ export const GreenSpaceAdd = () => {
           type="number"
           inputCls="max-w-xs"
           label="Latitude"
+          id="latitude"
           value={greenSpace.profile?.location?.latitude}
           onChange={handleChange}
         />
@@ -68,6 +74,7 @@ export const GreenSpaceAdd = () => {
           type="number"
           inputCls="max-w-xs"
           label="Ticket Price"
+          id="ticket_price"
           value={greenSpace.profile?.ticket_price}
           onChange={handleChange}
         />
