@@ -3,14 +3,15 @@ import { notify } from "@/lib"
 import { ApiError } from "@/types"
 import {
   ExceptionModel,
-  Event,
-  EventsGet200Response,
+  EventModel,
+  GetEvents200Response,
+  CrupdateEvent,
 } from "@rtgi-api/typescript-client"
 
 export const eventProvider = {
   getOne: async (id: string) => {
     try {
-      return await fetcher<Event>(
+      return await fetcher<EventModel>(
         `${base.RTGI_API_URL}/events`,
         "GET",
         {
@@ -25,9 +26,9 @@ export const eventProvider = {
       return
     }
   },
-  add: async (toAdd: Event) => {
+  add: async (toAdd: CrupdateEvent) => {
     try {
-      return await fetcher<Event>(
+      return await fetcher<EventModel>(
         `${base.RTGI_API_URL}/events/${toAdd.id}`,
         "PUT",
         undefined,
@@ -40,9 +41,9 @@ export const eventProvider = {
       return
     }
   },
-  update: async (toUpdate: Event) => {
+  update: async (toUpdate: EventModel) => {
     try {
-      return await fetcher<Event>(
+      return await fetcher<EventModel>(
         `${base.RTGI_API_URL}/events/${toUpdate.id}`,
         "PUT",
         undefined,
@@ -57,7 +58,7 @@ export const eventProvider = {
   },
   list: async (page: number, page_size: number, green_space_id?: string) => {
     try {
-      return await fetcher<EventsGet200Response>(
+      return await fetcher<GetEvents200Response>(
         `${base.RTGI_API_URL}/events`,
         "GET",
         {

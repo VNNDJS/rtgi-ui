@@ -18,8 +18,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@rtgi-api/typescript-client':
-        specifier: 0.2.0
-        version: 0.2.0(axios@1.7.4)
+        specifier: 0.3.0
+        version: 0.3.0(axios@1.7.4)
       '@tanstack/react-query':
         specifier: ^5.51.23
         version: 5.51.23(react@18.3.1)
@@ -1795,8 +1795,8 @@ packages:
   '@rollup/rollup-win32-x64-msvc@4.20.0':
     resolution: {integrity: sha512-aJ1EJSuTdGnM6qbVC4B5DSmozPTqIag9fSzXRNNo+humQLG89XpPgdt16Ia56ORD7s+H8Pmyx44uczDQ0yDzpg==}
 
-  '@rtgi-api/typescript-client@0.2.0':
-    resolution: {integrity: sha512-DRi0LAU6JxvO5WC7M8rmJj8nrZO2Pn9EQMDNVp8lYmOC0etP5NgErrMHB0cGzuqvuFZAl4BZwNTi5QadefTeHA==}
+  '@rtgi-api/typescript-client@0.3.0':
+    resolution: {integrity: sha512-/TrCXVbCfmEoLjz147iZVqrFGGc4RD3W5fZF1fnS0LscAp4Lyviho244dwrm5W/LtueVyH5cZP7qFqj5RexsjA==}
     peerDependencies:
       axios: ^1.6.1
 
@@ -2125,8 +2125,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.9:
-    resolution: {integrity: sha512-HfkT8ndXR0SEkU8gBQQM3rz035bpE/hxkZ1YIt4KJPEFES68HfIU6LzKukH0H794Lm83WJtkSAMfEToxCs15VA==}
+  electron-to-chromium@1.5.10:
+    resolution: {integrity: sha512-C3RDERDjrNW262GCRvpoer3a0Ksd66CtgDLxMHhzShQ8fhL4kwnpVXsJPAKg9xJjIROXUbLBrvtOzVAjALMIWA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -5598,7 +5598,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.20.0':
     optional: true
 
-  '@rtgi-api/typescript-client@0.2.0(axios@1.7.4)':
+  '@rtgi-api/typescript-client@0.3.0(axios@1.7.4)':
     dependencies:
       axios: 1.7.4
 
@@ -5833,7 +5833,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.9
+      electron-to-chromium: 1.5.10
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -5946,7 +5946,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.9: {}
+  electron-to-chromium@1.5.10: {}
 
   emoji-regex@8.0.0: {}
 

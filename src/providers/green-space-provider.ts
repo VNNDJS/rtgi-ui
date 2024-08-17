@@ -4,7 +4,7 @@ import { ApiError } from "@/types"
 import {
   ExceptionModel,
   GreenSpace,
-  GreenSpacesGet200Response,
+  GetGreenSpaces200Response,
 } from "@rtgi-api/typescript-client"
 
 export const greenSpaceProvider = {
@@ -57,7 +57,7 @@ export const greenSpaceProvider = {
   },
   list: async (page: number, page_size: number, user_id?: string) => {
     try {
-      return await fetcher<GreenSpacesGet200Response>(
+      return await fetcher<GetGreenSpaces200Response>(
         `${base.RTGI_API_URL}/green-spaces`,
         "GET",
         {

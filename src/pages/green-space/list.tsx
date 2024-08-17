@@ -1,6 +1,7 @@
 import {
   AddButton,
   GreenSpaceCard,
+  HeaderList,
   NextButton,
   PreviousButton,
 } from "@/components"
@@ -19,21 +20,15 @@ export const GreenSpaceList = () => {
   if (isFetching) return <p>isFetching</p>
   return (
     <section className="min-h-screen w-full p-2 flex flex-col space-y-5">
-      <header className="w-full flex flex-row items-center justify-between">
-        <h2 className="py-2 text-xl quicksand-bold ">Green Spaces</h2>
-        <AddButton resource="green-space" />
-      </header>
+      <HeaderList resource="green-space" title="Green Spaces" />
       <ul className="gap-4 grid grid-cols-3">
         {data?.data?.map((gs, index) => (
-          <GreenSpaceCard gs={gs} key={`${index}-${gs}`} />
+          <GreenSpaceCard gs={gs} key={`${index}-${gs.id}`} />
         ))}
       </ul>
       <footer className="w-full flex flex-row justify-end items-center">
-        <PreviousButton
-          onClick={() => decrease()}
-          has_previous={data?.has_previous}
-        />
-        <NextButton onClick={() => increase()} />
+        <PreviousButton onClick={decrease} has_previous={data?.has_previous} />
+        <NextButton onClick={increase} />
       </footer>
     </section>
   )

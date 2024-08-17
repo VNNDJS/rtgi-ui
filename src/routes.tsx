@@ -12,6 +12,7 @@ import {
   EventEdit,
   EventList,
   EventRead,
+  Chat,
 } from "./pages"
 
 export const AppRoutes = () => {
@@ -33,6 +34,7 @@ export const AppRoutes = () => {
           <Route path="/event/add" Component={EventAdd} />
           <Route path="/event/:id/edit" Component={EventEdit} />
         </Route>
+        <Route path="/chat" Component={Chat} />
         <Route path="/profile" Component={Profile} />
       </Route>
 
